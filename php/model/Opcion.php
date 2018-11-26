@@ -4,9 +4,8 @@ class Opcion {
 	private $nombre;
 	private $descripcion;
 	
-	function __construct($nombre, $descripcion) {
-		$this->nombre = $nombre;
-		$this->descripcion = $descripcion;
+	function __construct() {
+
 	}
 
 	function set_id_opcion($idOpcion) { $this->id_opcion = $id_opcion; }
@@ -15,6 +14,6 @@ class Opcion {
 
 	function get_id_opcion() { return $this->id_opcion; }
 	function get_nombre() { return $this->nombre; }
-	function get_description() { return $this->descripcion; }
+	function get_descriction() { return $this->descripcion; }
 }
  ?>
