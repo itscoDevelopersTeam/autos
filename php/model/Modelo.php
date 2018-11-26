@@ -4,8 +4,7 @@ class Modelo {
 	private $nombre;
 	private $id_marca;
 	
-	function __construct($idModelo, $nombre, $idMarca) {
-		$this->id_modelo = $idModelo;
+	function __construct($nombre, $idMarca) {
 		$this->nombre = $nombre;
 		$this->id_marca = $idMarca;
 	}

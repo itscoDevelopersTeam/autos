@@ -4,8 +4,7 @@ class Opcion {
 	private $nombre;
 	private $descripcion;
 	
-	function __construct($idOpcion, $nombre, $descripcion) {
-		$this->id_opcion = $idOpcion;
+	function __construct($nombre, $descripcion) {
 		$this->nombre = $nombre;
 		$this->descripcion = $descripcion;
 	}
