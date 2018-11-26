@@ -25,10 +25,10 @@ class CrudRol {
 		$select=$db->query('SELECT * FROM ROLES');
 
 		foreach($select->fetchAll() as $rol){
-			$myRol= new Rol;
+			$myRol= new Rol();
 			$myRol->set_id_rol($rol['ID_ROL']);
 			$myRol->set_nombre($rol['NOMBRE']);
-			$myRol->set_direccion($rol['DESCRIPCION']);
+			$myRol->set_descripcion($rol['DESCRIPCION']);
 			$listaRoles[] = $myRol;
 		}
 		return $listaRoles;

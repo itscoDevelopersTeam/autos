@@ -29,24 +29,24 @@ require_once('Conexion.php');
 			$actualizar=$db->prepare('UPDATE OPCIONES SET NOMBRE=:nombre, DESCRIPCION=:descripcion  WHERE ID_OPCIONES=:id_opcion');
 			$actualizar->bindValue('id_opcion',$opcion->get_id_opcion());
 			$actualizar->bindValue('nombre',$opcion->get_nombre());
-			$actualizar->bindValue('descripcion',$opcion->get_description());
+			$actualizar->bindValue('descripcion',$opcion->get_descripcion());
 			$actualizar->execute();
 		}
 
 		// método para mostrar todos los opcions
 		public function select_all(){
 			$db = DataBase::conectar();
-			$listaClientes=[];
+			$listaOpciones=[];
 			$select=$db->query('SELECT * FROM OPCIONES');
 
 			foreach($select->fetchAll() as $opcion){
-				$myCliente= new Cliente();
-				$myCliente->set_id_opcion($opcion['ID_OPCIONES']);
-				$myCliente->set_nombre($opcion['NOMBRE']);
-				$myCliente->set_descripcion($opcion['DESCRIPCION']);
-				$listaClientes[]=$myCliente;
+				$myOpcion= new Opcion();
+				$myOpcion->set_id_opcion($opcion['ID_OPCIONES']);
+				$myOpcion->set_nombre($opcion['NOMBRE']);
+				$myOpcion->set_descripcion($opcion['DESCRIPCION']);
+				$listaOpciones[]=$myOpcion;
 			}
-			return $listaClientes;
+			return $listaOpciones;
 		}
 
 		// método para buscar un opcion, recibe como parámetro el id del opcion
@@ -57,11 +57,11 @@ require_once('Conexion.php');
 			$select->execute();
 
 			$opcion=$select->fetch();
-			$myCliente= new Cliente();
-			$myCliente->set_id_opcion($opcion['ID_OPCIONES']);
-			$myCliente->set_nombre($opcion['NOMBRE']);
-			$myCliente->set_descripcion($opcion['DESCRIPCION']);
-			return $myCliente;
+			$myOpcion= new Opcion();
+			$myOpcion->set_id_opcion($opcion['ID_OPCIONES']);
+			$myOpcion->set_nombre($opcion['NOMBRE']);
+			$myOpcion->set_descripcion($opcion['DESCRIPCION']);
+			return $myOpcion;
 		}
 	}
  ?>

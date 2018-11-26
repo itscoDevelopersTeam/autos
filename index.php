@@ -1,21 +1,14 @@
 <?php
-include("php/controllers/CrudCliente.php");
-include("php/model/Cliente.php");
+include 'php/controllers/CrudRol.php';
+include 'php/model/Rol.php';
 
-$idCliente = 'qwertyuiop';
-$nombre = 'Samuel';
-$direccion = 'Sepa la verga 55';
-$telefono = '2281242049';
+	$rol = new Rol();
+	$crud_rol = new CrudRol;
+	$listaRoles = $crud_rol->select_all();
 
-$cliente = new Cliente();
-$crud_cliente = new CrudCliente();
 
-$cliente->set_id_cliente($idCliente);
-$cliente->set_nombre($nombre);
-$cliente->set_direccion($direccion);
-$cliente->set_telefono($telefono);
+	foreach ($listaRoles as $rol) {	
+		echo  '<option>'.$rol->get_nombre().'</option>';
+	}
 
-$resultado = $crud_cliente->select($cliente->get_id_cliente());
-
-print_r($resultado);
  ?>

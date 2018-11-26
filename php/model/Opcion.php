@@ -14,6 +14,6 @@ class Opcion {
 
 	function get_id_opcion() { return $this->id_opcion; }
 	function get_nombre() { return $this->nombre; }
-	function get_descriction() { return $this->descripcion; }
+	function get_descripcion() { return $this->descripcion; }
 }
  ?>

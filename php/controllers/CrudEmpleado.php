@@ -42,7 +42,7 @@ require_once('Conexion.php');
 			$select=$db->query('SELECT * FROM EMPLEADOS');
 
 			foreach($select->fetchAll() as $empleado){
-				$myEmpleado= new Cliente();
+				$myEmpleado= new Empleado();
 				$myEmpleado->set_id_empleado($empleado['ID_EMPLEADO']);
 				$myEmpleado->set_nombre($empleado['NOMBRE']);
 				$myEmpleado->set_direccion($empleado['DIRECCION']);
@@ -60,7 +60,7 @@ require_once('Conexion.php');
 			$select->execute();
 
 			$empleado=$select->fetch();
-			$myEmpleado= new Cliente();
+			$myEmpleado= new Empleado();
 			$myEmpleado->set_id_empleado($empleado['ID_EMPLEADO']);
 			$myEmpleado->set_nombre($empleado['NOMBRE']);
 			$myEmpleado->set_direccion($empleado['DIRECCION']);
