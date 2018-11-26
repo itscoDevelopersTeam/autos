@@ -5,12 +5,16 @@ class Cliente{
 	private $direccion;
 	private $telefono;
 
-	function __construct($idCliente, $nombre, $direccion, $telefono) {
-		$this->id_cliente = $idCliente;
-		$this->nombre = $nombre;
-		$this->direccion = $direccion;
-		$this->telefono = $direccion;
+	function __construct() {
+
 	}
+
+	// function __construct($idCliente, $nombre, $direccion, $telefono) {
+	// 	$this->id_cliente = $idCliente;
+	// 	$this->nombre = $nombre;
+	// 	$this->direccion = $direccion;
+	// 	$this->telefono = $telefono;
+	// }
 
 	function set_id_cliente($idCliente) { $this->id_cliente = $idCliente; }
 	function set_nombre($nombre) { $this->nombre = $nombre; }
