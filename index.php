@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("php/controllers/CrudCliente.php");
 include("php/model/Cliente.php");
 
@@ -18,6 +18,4 @@ $cliente->set_telefono($telefono);
 $resultado = $crud_cliente->select($cliente->get_id_cliente());
 
 print_r($resultado);
-
-
  ?>
