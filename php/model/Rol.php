@@ -4,11 +4,6 @@ class Rol {
 	private $nombre;
 	private $descripcion;
 
-	function __construct($nombre, $descripcion) {
-		$this->nombre = $nombre;
-		$this->descripcion = $descripcion;
-	}
-
 	function set_id_rol($idRol) { $this->id_rol = $idRol; }
 	function set_nombre($nombre) { $this->nombre = $nombre; }
 	function set_descripcion($descripcion) { $this->descripcion = $descripcion; }
