@@ -55,9 +55,11 @@
 				<td>Rol: </td>
 				<td>
 					<select >
-						<?php foreach ($listaRoles as $rol) {	
+						<?php 
+							foreach ($listaRoles as $rol) 
+							{	
 								echo  '<option>'.$rol->get_nombre().'</option>';
-							  }
+							}
 						?>
 					</select>
 				</td>
