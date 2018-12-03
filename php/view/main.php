@@ -22,6 +22,6 @@ else{
 	 	<title>Saludo</title>
 	 </head>
 	 <body>
-	 	<a href="login/logout.php">Cerrar sesión</a>
+	 	<a href="../controller/session/logout.php">Cerrar sesión</a>
 	 </body>
  </html>

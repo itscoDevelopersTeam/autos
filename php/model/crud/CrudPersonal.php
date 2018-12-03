@@ -31,15 +31,16 @@ require_once('Conexion.php'); //require_once va hasta la base /autos
 		// método para actualizar un personal, recibe como parámetro el personal
 		public function update( $personal ){
 			$db = DataBase::conectar();
-			$actualizar=$db->prepare('UPDATE PERSONAL SET NOMBRE=:nombre, DIRECCION=:direccion, TELEFONO=:telefono, EMAIL=:email, USERNAME=:username, PASSWORD=password, ID_ROL=:rol WHERE ID_PERSONAL=:id_personal');
-			$actualizar->bindValue('id_personal',$personal->get_id_personal());
-			$actualizar->bindValue('nombre',$personal->get_nombre());
-			$actualizar->bindValue('direccion',$personal->get_direccion());
-			$actualizar->bindValue('telefono',$personal->get_telefono());
-			$actualizar->bindValue('email',$personal->get_email());
-			$actualizar->bindValue('username',$personal->get_username());
-			$actualizar->bindValue('password',$personal->get_password());
-			$actualizar->bindValue('rol',$personal->get_rol());
+			$actualizar=$db->prepare('UPDATE PERSONAL SET NOMBRE=:nombre, DIRECCION=:direccion, TELEFONO=:telefono, EMAIL=:email, USERNAME=:username, PASSWORD=:password, ID_ROL=:rol WHERE ID_PERSONAL=:id_personal');
+
+			$actualizar->bindValue('id_personal', $personal->get_id_personal());
+			$actualizar->bindValue('nombre', $personal->get_nombre());
+			$actualizar->bindValue('direccion', $personal->get_direccion());
+			$actualizar->bindValue('telefono', $personal->get_telefono());
+			$actualizar->bindValue('email', $personal->get_email());
+			$actualizar->bindValue('username', $personal->get_username());
+			$actualizar->bindValue('password', $personal->get_password());
+			$actualizar->bindValue('rol', $personal->get_rol());
 			$actualizar->execute();
 		}
 

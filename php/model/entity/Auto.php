@@ -11,9 +11,9 @@ class Auto {
 	function set_id_modelo($idModelo) { $this->id_modelo = $idModelo; }
 
 	function get_id_auto() { return $this->id_auto; }
-	function get_precio() { return $this->precio = $precio; }
+	function get_precio() { return $this->precio; }
 	function get_cilindrada() { return $this->cilindrada; }
 	function get_id_modelo() { return $this->id_modelo; }
 }
 
- ?>
+?>

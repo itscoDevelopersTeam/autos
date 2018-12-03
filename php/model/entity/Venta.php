@@ -1,13 +1,13 @@
 <?php 
 class Venta {
-
-	private $id_venta;
-	private $fecha_venta;
-	private $total_venta;
+	private $id_auto;
 	private $id_personal;
 	private $id_cliente;
-	private $id_auto;
 	private $matricula;
+	private $fecha_venta;
+	private $total_venta;
+	
+	
 
 	function set_id_auto($idAuto) { $this->id_auto = $idAuto; }
 	function set_id_personal($idPersonal) { $this->id_personal = $idPersonal; }
@@ -21,11 +21,10 @@ class Venta {
 	function get_id_personal() { return $this->id_personal; }
 	function get_id_cliente() { return $this->id_cliente; }
 	function get_matricula() { return $this->matricula; }
-	function get_id_venta() { return $this->id_venta; }
 	function get_fecha_venta() { return $this->fecha_venta; }
 	function get_total_venta() { return $this->total_venta; }
 	
 	
 }
 
- ?>
+?>

@@ -26,9 +26,10 @@ require_once('Conexion.php');
 		// método para actualizar un modelo, recibe como parámetro el modelo
 		public function update( $modelo ){
 			$db = DataBase::conectar();
-			$actualizar=$db->prepare('UPDATE MODELOS SET ID_MARCA=:id_marca, NOMBRE=:nombre  WHERE ID_MODELO=:id_modelo');
-			$actualizar->bindValue('id_marca',$modelo->get_id_marca());
-			$actualizar->bindValue('nombre',$modelo->get_nombre());			
+			$actualizar=$db->prepare('UPDATE MODELOS SET NOMBRE=:nombre, ID_MARCA=:id_marca WHERE ID_MODELO=:id_modelo');
+			$actualizar->bindValue('id_modelo',$modelo->get_id_modelo());
+			$actualizar->bindValue('nombre',$modelo->get_nombre());
+			$actualizar->bindValue('id_marca',$modelo->get_id_marca());			
 			$actualizar->execute();
 		}
 

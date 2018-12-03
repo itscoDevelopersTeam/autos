@@ -8,33 +8,22 @@ include '../model/entity/Personal.php';
 $crudPersonal= new CrudPersonal();
 $personal= new Personal();
  
-	// si el elemento insertar no viene nulo llama al CrudPersonal e inserta un Personal
-	if ( isset( $_POST['login'] ) ) {
+	// Si el elemento insertar no viene nulo llama al CrudPersonal e inserta un Personal, 
+	// login viene del indicador en el formulario
+	if ( isset( $_POST['registro'] ) ) {
 
-		$user = $_POST['inputUser'];
-		$pass = $_POST['inputPassword'];
+		$personal->set_id_personal( $_POST['inputIdPersonal'] );
+		$personal->set_nombre( $_POST['inputNombre'] );
+		$personal->set_direccion( $_POST['inputDireccion'] );
+		$personal->set_telefono( $_POST['inputTelefono'] );
+		$personal->set_email( $_POST['inputEmail'] );
+		$personal->set_username( $_POST['inputUser'] );
+		$personal->set_password( $_POST['inputPassword'] );
+		$personal->set_rol( $_POST['inputRol'] );
 
-		//llama a la función select_login definida en el CrudPersonal
-		$personal = $crudPersonal->select_login( $user, $pass );
+		//llama a la función insert definida en el CrudPersonal
+		$crudPersonal->insert( $personal );
 
-		// Comprueba username y password del form y la BD
-		if ($user == $personal->get_username() && $pass == $personal->get_password() ) {
-
-			session_start();
-			$_SESSION['status'] = true;
-			$_SESSION['id_personal'] = $personal->get_id_personal();
-			$_SESSION['nombre'] = $personal->get_nombre();
-			$_SESSION['direccion'] = $personal->get_direccion();
-			$_SESSION['telefono'] = $personal->get_telefono();
-			$_SESSION['email'] = $personal->get_email();
-			$_SESSION['username'] = $personal->get_username();
-			$_SESSION['password'] = $personal->get_password();
-			$_SESSION['rol'] = $personal->get_rol();
-
-			header('Location: ../view/main.php');
-		}
-		else{
-			header('Location: ../../index.php?msj=incorrect');
-		}
+		header('Location: ../view/admin/personal/Registro.php?msj=Registro_OK');
 	}
 ?>

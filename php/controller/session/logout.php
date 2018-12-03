@@ -1,6 +1,7 @@
 <?php 
 session_start();
-if($_SESSION) {
+
+if(isset($_SESSION['status'])) {
 	session_destroy();
 	header("Location: ../../../index.php?msj=congratulations");
 }
